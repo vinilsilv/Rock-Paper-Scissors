@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" >
+    <script defer src="./script.js" ></script>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+
+<div class="content-wrapper">
+  <div class="players-wrapper">
+    <div class="opponent">
+      <i id="opponent-result" data-element="" class="fa-regular fa-hand-back-fist"></i>
+    </div>
+
+    <div class="player">
+      <i id="player-result" data-element="" class="result fa-regular fa-hand-back-fist"></i>
+    </div>
+  </div>
+
+  <div class="pick-one">
+    <button data-element="hand" class="pick-icon pick-rock fa-regular fa-hand"></button>
+    <button data-element="hand-back-fist" class="pick-icon pick-paper fa-regular fa-hand-back-fist"></button>
+    <button data-element="hand-scissors" class="pick-icon pick-scissors fa-regular fa-hand-scissors"></button>
+  </div>
+
+  <p id="match-results">Pick one to start!</p>
+  <div class="results-wrapper">
+    <div>
+      <p>WON</p>
+      <p class="times-won">0</p>
+    </div>
+    <div>
+      <p>LOST</p>
+      <p class="times-lost">0</p>
+    </div>
+    <div>
+      <p>DRAW</p>
+      <p class="times-draw">0</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
