@@ -1,124 +1,129 @@
 body {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 95vh;
-    font-family: sans-serif;
-    background-color: #ffea00;
-    padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 95vh;
+  font-family: sans-serif;
+  background-color: #ffea00;
+  padding: 0 20px;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #282526;
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  font-size: 35px;
+}
+
+.content-wrapper {
+  background-color: #fff;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 5px 6px 0 1px rgba(0, 0, 0, 0.05);
+}
+
+@-webkit-keyframes shake-fists {
+  from {
+    transform: translateY(0px);
   }
-  
-  h1 {
-    text-transform: uppercase;
-    color: #282526;
-    font-family: "Bebas Neue", cursive;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-    font-size: 35px;
+  to {
+    transform: translateY(-30px);
   }
-  
-  .content-wrapper {
-    background-color: #fff;
-    text-align: center;
-    width: 100%;
-    max-width: 300px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 5px;
-    box-shadow: 5px 6px 0 1px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes shake-fists {
+  from {
+    transform: translateY(0px);
   }
-  
-  @keyframes shake-fists {
-    from {
-      transform: translateY(0px);
-    }
-    to {
-      transform: translateY(-30px);
-    }
+  to {
+    transform: translateY(-30px);
   }
-  
-  .players-wrapper {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5px;
-  }
-  
-  /* Opponent results */
-  .opponent,
-  .player {
-    margin: 5px;
-    padding: 20px;
-    font-size: 45px;
-    color: #333;
-  }
-  
-  .fists-animation {
-    animation-name: shake-fists;
-    animation-duration: 0.2s;
-    animation-iteration-count: 6;
-    animation-direction: alternate;
-  }
-  
-  .opponent .fa-hand-back-fist {
-    transform: rotate(90deg);
-  }
-  
-  .opponent .fa-hand {
-    transform: rotate(90deg);
-  }
-  
-  .opponent .fa-hand-scissors {
-    transform: rotate(0deg) scaleX(-1);
-  }
-  
-  /* Player results */
-  .player .fa-hand-back-fist {
-    transform: rotate(-90deg) scaleX(-1);
-  }
-  
-  .player .result .fa-hand-scissors {
-    transform: rotate(180deg);
-  }
-  
-  .player .fa-hand {
-    transform: rotate(90deg) scaleY(-1);
-  }
-  
-  /* Choosing  */
-  .pick-one .fa-hand-scissors {
-    transform: rotate(-90deg) scaleX(-1);
-  }
-  
-  .pick-icon {
-    font-size: 25px;
-    color: #333;
-    padding: 15px;
-    background-color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .pick-icon:hover {
-    box-shadow: 2px 2px 0 1px rgba(0, 0, 0, 0.15);
-  }
-  
-  .results-wrapper {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .results-wrapper div {
-    padding: 5px 20px;
-    margin: 0 2px;
-    background-color: #f7f7f7;
-    border-radius: 5px;
-  }
-  
-  .results-wrapper p {
-    font-size: 12px;
-    font-weight: 600;
-  }
+}
+.players-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+/* Opponent results */
+.opponent,
+.player {
+  margin: 5px;
+  padding: 20px;
+  font-size: 45px;
+  color: #333;
+}
+
+.fists-animation {
+  -webkit-animation-name: shake-fists;
+          animation-name: shake-fists;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-iteration-count: 6;
+          animation-iteration-count: 6;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.opponent .fa-hand-back-fist {
+  transform: rotate(90deg);
+}
+.opponent .fa-hand {
+  transform: rotate(90deg);
+}
+.opponent .fa-hand-scissors {
+  transform: rotate(0deg) scaleX(-1);
+}
+
+/* Player results */
+.player .fa-hand-back-fist {
+  transform: rotate(-90deg) scaleX(-1);
+}
+.player .result .fa-hand-scissors {
+  transform: rotate(180deg);
+}
+.player .fa-hand {
+  transform: rotate(90deg) scaleY(-1);
+}
+
+/* Choosing  */
+.pick-one .fa-hand-scissors {
+  transform: rotate(-90deg) scaleX(-1);
+}
+
+.pick-icon {
+  font-size: 25px;
+  color: #333;
+  padding: 15px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pick-icon:hover {
+  box-shadow: 2px 2px 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.results-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.results-wrapper div {
+  padding: 5px 20px;
+  margin: 0 2px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+}
+.results-wrapper p {
+  font-size: 12px;
+  font-weight: 600;
+}/*# sourceMappingURL=style.css.map */
