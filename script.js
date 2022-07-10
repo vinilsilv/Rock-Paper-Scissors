@@ -67,7 +67,7 @@ function whoWon() {
 function matchWon() {
   timesWon++;
   wonCount.innerText = timesWon;
-  matchResults.innerText = "You won!";
+  matchResults.innerText = "Yeah! You won!";
 }
 
 function matchDraw() {
@@ -79,5 +79,5 @@ function matchDraw() {
 function matchLost() {
   timesLost++;
   lostCount.innerText = timesLost;
-  matchResults.innerText = "You lost";
+  matchResults.innerText = "Uh oh. You lost";
 }
