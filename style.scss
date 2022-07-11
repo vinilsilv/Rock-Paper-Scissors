@@ -1,7 +1,7 @@
 $icons-primary: #333;
 
 * {
-    font-family: 'SF Pro Display';
+    font-family: "SF Pro Display";
 }
 
 body {
@@ -58,14 +58,6 @@ h1 {
     margin-bottom: 5px;
 }
 
-/* Opponent results */
-.opponent,
-.player {
-    margin: 5px;
-    padding: 20px;
-    font-size: 45px;
-    color: $icons-primary;
-}
 
 .fists-animation {
     animation-name: shake-fists;
@@ -74,36 +66,45 @@ h1 {
     animation-direction: alternate;
 }
 
-.opponent {
-    .fa-hand-back-fist {
-        transform: rotate(90deg);
-    }
-
-    .fa-hand {
-        transform: rotate(90deg);
-    }
-
-    .fa-hand-scissors {
-        transform: rotate(0deg) scaleX(-1);
-    }
-}
-
-
 /* Player results */
-.player {
-    .fa-hand-back-fist {
-        transform: rotate(-90deg) scaleX(-1);
-    }
-
-    .result .fa-hand-scissors {
-        transform: rotate(180deg);
-    }
-
-    .fa-hand {
-        transform: rotate(90deg) scaleY(-1);
-    }
+.players {
+    margin: 5px;
+    padding: 20px;
+    font-size: 45px;
+    color: $icons-primary;
 }
 
+.result {
+    &-player {
+        .fa-hand-back-fist {
+            transform: rotate(90deg);
+        }
+
+        .fa-hand-scissors {
+            transform: scaleX(-1);
+        }
+
+        .fa-hand {
+            transform: rotate(90deg);
+        }
+    }
+
+    &-opponent {
+        transform: scaleX(-1);
+
+        .fa-hand-back-fist {
+            transform: rotate(90deg);
+        }
+
+        .fa-hand {
+            transform: rotate(90deg);
+        }
+
+        .fa-hand-scissors {
+            transform: rotate(0deg) scaleX(-1);
+        }
+    }
+}
 
 /* Choosing  */
 .pick-one .fa-hand-scissors {
@@ -125,7 +126,7 @@ h1 {
 }
 
 .main-divider {
-    width:70%;
+    width: 70%;
     border: none;
     border-top: 1px solid #ccc;
     margin: 15px 0;
@@ -136,7 +137,7 @@ h1 {
     flex-direction: row;
 
     div {
-        margin: 0 20px
+        margin: 0 20px;
     }
 
     .counters {
