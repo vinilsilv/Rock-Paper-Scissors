@@ -17,29 +17,30 @@
   <div class="two-columns">
     <h1>Rock<br> Paper<br> Scissors</h1>
 
-    <div class="content-wrapper">
+    <div class="main-wrapper">
       <div class="players-wrapper">
 
-        <div class="result-player players">
-          <i id="player-result" data-element="" class="result fa-regular fa-hand-back-fist"></i>
+        <div class="players hand-user">
+          <i data-element="" class="fa-regular fa-hand-back-fist"></i>
         </div>
 
-        <div class="result-opponent players">
-          <i id="opponent-result" data-element="" class="fa-regular fa-hand-back-fist"></i>
+        <div class="players hand-opponent">
+          <i data-element="" class="fa-regular fa-hand-back-fist"></i>
         </div>
-
 
       </div>
 
-      <div class="pick-one">
-        <button data-element="hand" class="pick-icon pick-rock fa-regular fa-hand"></button>
-        <button data-element="hand-back-fist" class="pick-icon pick-paper fa-regular fa-hand-back-fist"></button>
-        <button data-element="hand-scissors" class="pick-icon pick-scissors fa-regular fa-hand-scissors"></button>
+      <div class="hand-choices">
+        <button data-element="hand" class="choice fa-regular fa-hand"></button>
+        <button data-element="hand-back-fist" class="choice fa-regular fa-hand-back-fist"></button>
+        <button data-element="hand-scissors" class="choice fa-regular fa-hand-scissors"></button>
       </div>
 
-      <p id="match-results">Pick one to start!</p>
-      <hr class="main-divider">
-      <div class="results-wrapper">
+      <p class="match-results">Pick one to start!</p>
+      
+      <hr class="content-divider">
+
+      <div class="counter-wrapper">
         <div>
           <p class="counters times-won">0</p>
           <p>Won</p>

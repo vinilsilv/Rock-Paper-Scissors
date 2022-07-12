@@ -1,7 +1,17 @@
 $icons-primary: #333;
+$icons-background: #fff;
+
+$heading-color-primary: #282526;
+$text-color-primary: #282526;
+$hover-color-primary: #0066cc;
+
+$background-color: #f2f2f2;
+$main-wrapper-background: #fff;
+
+$borders-color: #d2d2d7;
 
 * {
-    font-family: "SF Pro Display";
+    font-family: "SF Pro Display", sans-serif;
 }
 
 body {
@@ -10,8 +20,8 @@ body {
     flex-direction: column;
     align-items: center;
     height: 95vh;
-    background-color: #f2f2f2;
     padding: 0 20px;
+    background-color: $background-color;
 }
 
 .two-columns {
@@ -22,16 +32,17 @@ body {
 
 h1 {
     font-weight: 600;
-    color: #282526;
+    color: $heading-color-primary;
     letter-spacing: 1px;
-    margin-bottom: 27px;
-    margin-right: 40px;
     font-size: 60px;
     text-align: right;
+
+    margin-bottom: 27px;
+    margin-right: 40px;
 }
 
-.content-wrapper {
-    background-color: #fff;
+.main-wrapper {
+    background-color: $main-wrapper-background;
     text-align: center;
     width: 100%;
     max-width: 600px;
@@ -41,6 +52,7 @@ h1 {
     align-items: center;
     border-radius: 10px;
 }
+
 
 @keyframes shake-fists {
     from {
@@ -52,21 +64,19 @@ h1 {
     }
 }
 
-.players-wrapper {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5px;
-}
-
-
-.fists-animation {
+.shake-fists-animation {
     animation-name: shake-fists;
     animation-duration: 0.2s;
     animation-iteration-count: 6;
     animation-direction: alternate;
 }
 
-/* Player results */
+.players-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
 .players {
     margin: 5px;
     padding: 20px;
@@ -74,8 +84,8 @@ h1 {
     color: $icons-primary;
 }
 
-.result {
-    &-player {
+.hand {
+    &-user {
         .fa-hand-back-fist {
             transform: rotate(90deg);
         }
@@ -106,33 +116,39 @@ h1 {
     }
 }
 
-/* Choosing  */
-.pick-one .fa-hand-scissors {
-    transform: rotate(-90deg) scaleX(-1);
-}
 
-.pick-icon {
-    font-size: 25px;
-    color: #333;
-    padding: 15px;
-    background-color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Choosing */
+.hand-choices {
+    .fa-hand-scissors {
+        transform: rotate(-90deg) scaleX(-1);
+    }
 
-    &:hover {
-        color: #0066cc;
+    .choice {
+        font-size: 25px;
+        color: $icons-primary;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        background-color: $icons-background;
+    
+        &:hover {
+            color: $hover-color-primary;
+        }
     }
 }
 
-.main-divider {
+
+.content-divider {
     width: 70%;
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $borders-color;
     margin: 15px 0;
 }
 
-.results-wrapper {
+
+.counter-wrapper {
     display: flex;
     flex-direction: row;
 
@@ -147,7 +163,7 @@ h1 {
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        border: 1px solid #d2d2d7;
+        border: 1px solid $borders-color;
     }
 
     p {

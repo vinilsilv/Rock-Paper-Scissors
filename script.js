@@ -1,83 +1,68 @@
-let buttons = document.querySelectorAll(".pick-one button");
-const opponent = document.getElementById("opponent-result");
-const player = document.getElementById("player-result");
-let opponentData = opponent.dataset["{element}"];
-let playerData = player.dataset["{element}"];
-
-const dataArr = ["hand-scissors", "hand-back-fist", "hand"];
-
-const matchResults = document.querySelector("p#match-results");
-const wonCount = document.querySelector("p.times-won");
-let timesWon = 0;
-
-const lostCount = document.querySelector("p.times-lost");
-let timesLost = 0;
-
-const drawCount = document.querySelector("p.times-draw");
-let timesDraw = 0;
-
-const animationReciever = document.querySelector(".players-wrapper");
-
-let buttonData;
-
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    animationReciever.classList.add("fists-animation");
-    player.className = "result fa-regular fa-hand-back-fist";
-    playerData = "";
-    opponent.className = "fa-regular fa-hand-back-fist";
-    opponentData = "";
-    buttonData = button.dataset.element;
-  });
+var choices = document.querySelectorAll(".hand-choices button");
+var opponent = document.querySelector(".hand-opponent i");
+var user = document.querySelector(".hand-user i");
+var handOutcomes = ["hand-scissors", "hand-back-fist", "hand"];
+var opponentDataset = opponent.dataset["{element}"];
+var userDataset = user.dataset["{element}"];
+var matchResults = document.querySelector(".match-results");
+var wonCount = document.querySelector("p.times-won");
+var timesWon = 0;
+var lostCount = document.querySelector("p.times-lost");
+var timesLost = 0;
+var drawCount = document.querySelector("p.times-draw");
+var timesDraw = 0;
+var animationReciever = document.querySelector(".players-wrapper");
+var choiceDataset;
+choices.forEach(function (choice) {
+    choice.addEventListener("click", function () {
+        animationReciever.classList.add("shake-fists-animation");
+        user.className = "result fa-regular fa-hand-back-fist";
+        userDataset = "";
+        opponent.className = "fa-regular fa-hand-back-fist";
+        opponentDataset = "";
+        choiceDataset = choice.dataset.element;
+    });
 });
-
 // When animation ends...
-animationReciever.addEventListener("animationend", () => {
-  animationReciever.classList.remove("fists-animation");
-  // Player recieves option chosen
-  playerData = buttonData;
-  player.className = `result fa-regular fa-${playerData}`;
-
-  // Opponent recieves random data from array
-  opponentRandom();
-
-  whoWon();
+animationReciever.addEventListener("animationend", function () {
+    animationReciever.classList.remove("shake-fists-animation");
+    // user recieves option chosen
+    userDataset = choiceDataset;
+    user.className = "result fa-regular fa-".concat(userDataset);
+    // Opponent recieves random data from array
+    opponentRandomChoice();
+    whoWon();
 });
-
-function opponentRandom() {
-  const randomData = Math.floor(Math.random() * dataArr.length);
-  opponent.className = `fa-regular fa-${dataArr[randomData]}`;
-  opponentData = dataArr[randomData];
+function opponentRandomChoice() {
+    var randomDataset = Math.floor(Math.random() * handOutcomes.length);
+    opponent.className = "fa-regular fa-".concat(handOutcomes[randomDataset]);
+    opponentDataset = handOutcomes[randomDataset];
 }
-
 function whoWon() {
-  if (
-    (opponentData == "hand-scissors" && playerData == "hand-back-fist") ||
-    (opponentData == "hand-back-fist" && playerData == "hand") ||
-    (opponentData == "hand" && playerData == "hand-scissors")
-  ) {
-    matchWon();
-  } else if (opponentData == playerData) {
-    matchDraw();
-  } else {
-    matchLost();
-  }
+    if ((opponentDataset == "hand-scissors" && userDataset == "hand-back-fist") ||
+        (opponentDataset == "hand-back-fist" && userDataset == "hand") ||
+        (opponentDataset == "hand" && userDataset == "hand-scissors")) {
+        matchWon();
+    }
+    else if (opponentDataset == userDataset) {
+        matchDraw();
+    }
+    else {
+        matchLost();
+    }
 }
-
 function matchWon() {
-  timesWon++;
-  wonCount.innerText = timesWon;
-  matchResults.innerText = "Yeah! You won!";
+    timesWon += 1;
+    wonCount.innerText = "".concat(timesWon);
+    matchResults.innerText = "Yeah! You won!";
 }
-
 function matchDraw() {
-  timesDraw++;
-  drawCount.innerText = timesDraw;
-  matchResults.innerText = "Draw!";
+    timesDraw += 1;
+    drawCount.innerText = "".concat(timesDraw);
+    matchResults.innerText = "Draw!";
 }
-
 function matchLost() {
-  timesLost++;
-  lostCount.innerText = timesLost;
-  matchResults.innerText = "Uh oh. You lost";
+    timesLost += 1;
+    lostCount.innerText = "".concat(timesLost);
+    matchResults.innerText = "Uh oh. You lost";
 }
